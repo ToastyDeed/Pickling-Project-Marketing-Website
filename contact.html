@@ -27,7 +27,7 @@
 
         <div class="section">
             <h2>Request an Order</h2>
-            <p>Fill out the form below and we'll get back to you with a confirmed order and pickup details.</p>
+            <p>Select your products, choose sizes, and we'll get back to you with confirmed pickup details.</p>
         </div>
 
         <div class="section">
@@ -38,20 +38,60 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
-                <label for="product">Product Request:</label>
-                <select id="product" name="product">
-                    <option value="500ml Beet & Onion">500ml Beet & Onion - $4.99</option>
-                    <option value="500ml Garlic Dill Spears">500ml Garlic Dill Spears - $4.99</option>
-                    <option value="1L Dill Pickle">1L Dill Pickle - $9.99</option>
-                </select>
+                <h3 style="margin:20px 0 10px;color:#2d5a3d">Your Products</h3>
 
-                <label for="request-qty">Quantity:</label>
-                <input type="number" id="request-qty" name="quantity" value="1" min="1">
+                <div class="contact-product" data-name="Daikon and Carrot">
+                    <span class="cp-name">Daikon &amp; Carrot</span>
+                    <select class="cp-size">
+                        <option value="4.99">Small (500ml) - $4.99</option>
+                        <option value="9.99">Large (1L) - $9.99</option>
+                    </select>
+                    <input type="number" class="cp-qty" value="0" min="0">
+                    <span class="cp-sub">$0.00</span>
+                </div>
+
+                <div class="contact-product" data-name="Classic Dill Pickle">
+                    <span class="cp-name">Classic Dill Pickle</span>
+                    <select class="cp-size">
+                        <option value="4.99">Small (500ml) - $4.99</option>
+                        <option value="9.99">Large (1L) - $9.99</option>
+                    </select>
+                    <input type="number" class="cp-qty" value="0" min="0">
+                    <span class="cp-sub">$0.00</span>
+                </div>
+
+                <div class="contact-product" data-name="Beets and Onions">
+                    <span class="cp-name">Beets &amp; Onions</span>
+                    <select class="cp-size">
+                        <option value="4.99">Small (500ml) - $4.99</option>
+                        <option value="9.99">Large (1L) - $9.99</option>
+                    </select>
+                    <input type="number" class="cp-qty" value="0" min="0">
+                    <span class="cp-sub">$0.00</span>
+                </div>
+
+                <div class="contact-product" data-name="Cherry Tomatoes">
+                    <span class="cp-name">Cherry Tomatoes</span>
+                    <select class="cp-size">
+                        <option value="4.99">Small (500ml) - $4.99</option>
+                        <option value="9.99">Large (1L) - $9.99</option>
+                    </select>
+                    <input type="number" class="cp-qty" value="0" min="0">
+                    <span class="cp-sub">$0.00</span>
+                </div>
+
+                <div id="contact-total">
+                    <p>Subtotal: $<span id="c-subtotal">0.00</span></p>
+                    <p>Tax (13%): $<span id="c-tax">0.00</span></p>
+                    <p><strong>Total: $<span id="c-grand">0.00</span></strong></p>
+                </div>
+
+                <button type="button" class="btn" id="calc-contact-btn" style="margin-bottom:16px">Calculate Cost</button>
 
                 <label for="comments">Comments or Special Requests:</label>
                 <textarea id="comments" name="comments" rows="4" placeholder="Any special requests?"></textarea>
 
-                <button type="button" class="btn btn-submit" onclick="confirmOrder()">Submit Order Request</button>
+                <button type="button" class="btn btn-submit" id="submit-contact-btn">Submit Order Request</button>
             </form>
 
             <div id="confirmation">
